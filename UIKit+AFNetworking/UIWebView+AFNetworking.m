@@ -137,7 +137,7 @@
         __strong __typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf loadData:data MIMEType:(MIMEType ?: [operation.response MIMEType]) textEncodingName:(textEncodingName ?: [operation.response textEncodingName]) baseURL:[operation.response URL]];
 #pragma clang diagnostic pop
-    } failure:^(AFHTTPRequestOperation * __unused operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation * __unused operation, NSError *error,id responseObject) {
         if (failure) {
             failure(error);
         }

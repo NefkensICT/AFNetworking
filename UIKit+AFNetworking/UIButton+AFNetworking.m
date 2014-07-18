@@ -106,7 +106,7 @@
                 [strongSelf setImage:responseObject forState:state];
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error,id responseObject) {
         if ([[urlRequest URL] isEqual:[operation.response URL]]) {
             if (failure) {
                 failure(error);
@@ -157,7 +157,7 @@
                 [strongSelf setBackgroundImage:responseObject forState:state];
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error ,id responseObject) {
         if ([[urlRequest URL] isEqual:[operation.response URL]]) {
             if (failure) {
                 failure(error);
